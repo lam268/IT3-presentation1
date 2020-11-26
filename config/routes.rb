@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :blogs
+  get 'users/show'
   root to: 'static_pages#home'
   get 'static_pages/home'
   devise_for :users
