@@ -1,3 +1,15 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+// Colors
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "_bootstrap-overrides.scss";
+@import "_footer.scss";
+@import "_global.scss";
+@import "_masthead.scss";
+@import "_mixins.scss";
+@import "_navbar.scss";
+@import "_post.scss";
+@import "_variables.scss";
