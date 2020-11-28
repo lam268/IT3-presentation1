@@ -3,4 +3,5 @@ class Blog < ApplicationRecord
     def index
         @blog = Blog.all
     end
+    has_many :blog_comment, -> { order "created_at DESC"}
 end

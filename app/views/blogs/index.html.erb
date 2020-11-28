@@ -14,6 +14,7 @@
 
   <tbody>
     <% @blogs.each do |blog| %>
+      <% if blog.user_id == current_user.id %>
       <tr>
         <td><%= blog.user_id %></td>
         <td><%= blog.title %></td>
@@ -22,14 +23,11 @@
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
         <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<<<<<<< HEAD
 <%= link_to 'New Blog', new_blog_path %>
-=======
-<%= link_to 'New Blog', new_blog_path %><br/>
->>>>>>> 6dda2fc7811038a43e31324fa16bc3fc80813b2f

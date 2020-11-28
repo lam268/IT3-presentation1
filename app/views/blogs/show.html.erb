@@ -14,5 +14,35 @@
   <%= @blog.content %>
 </p>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', root_path %>
+<div class="col-sm-4">
+    <div class="card bg-light mb-3" style="max-width: 40rem;">
+      <div class="card-header"><h2>Comment</h2></div>
+      <div class="card-body">
+      <%= form_with(model: @blog_comment, local: true) do |form| %>
+        <div class= "field">
+          <%= form.text_area :comment, :class => "form-control" %>
+          <%= form.hidden_field :blog_id, :value => @blog.id %>
+          <%= form.hidden_field :user_id, :value => current_user.id %>
+        </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+       <% end %>
+       <h2>Comment List: </h2>
+       <ul>
+          <% @blog.blog_comment.each do |blog_comment|%>
+              <p class="card-text">・<%= blog_comment.comment %> (<%= blog_comment.user.name %>)
+              <% if current_user.id == blog_comment.user_id %>
+                <a><%= link_to 'Edit', edit_blog_comment_path(blog_comment.id) %></a>
+              <% end %></p>
+          <% end %>
+        </ul>
+       </div>
+    </div>
+  </div>
+</div>
+
+<% if current_user.id == @blog.user.id %>
+  <a><%= link_to 'Edit', edit_blog_path(@blog) %> |</a>
+<% end %>
+<%= link_to 'Back', root_path %> |
