@@ -1,3 +1,6 @@
-
 <h1>Home</h1>
-
+<% if user_signed_in? %>
+<p>
+  <%= link_to 'Show profile', users_show_path(current_user) %>
+</p>
+<% end %>
