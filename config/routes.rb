@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :blog_rakings
   resources :blog_comments
   resources :blogs
+  resources :ranking
   root to: 'static_pages#home'
   get 'static_pages/home'
   devise_for :users

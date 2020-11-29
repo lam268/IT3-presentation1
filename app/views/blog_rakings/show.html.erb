@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @blog_raking.user_id %>
+</p>
+
+<p>
+  <strong>Blog:</strong>
+  <%= @blog_raking.blog_id %>
+</p>
+
+<p>
+  <strong>Raking:</strong>
+  <%= @blog_raking.raking %>
+</p>
+
+<%= link_to 'Edit', edit_blog_raking_path(@blog_raking) %> |
+<%= link_to 'Back', blog_rakings_path %>

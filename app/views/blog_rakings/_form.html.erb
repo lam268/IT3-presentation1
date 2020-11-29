@@ -1,0 +1,32 @@
+<%= form_with(model: blog_raking, local: true) do |form| %>
+  <% if blog_raking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blog_raking.errors.count, "error") %> prohibited this blog_raking from being saved:</h2>
+
+      <ul>
+        <% blog_raking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :blog_id %>
+    <%= form.number_field :blog_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :raking %>
+    <%= form.number_field :raking %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

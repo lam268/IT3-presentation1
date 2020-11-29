@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blog Rakings</h1>
+
+<table>
+  
+
+  <tbody>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+      <% User.all.each do |blog_rakings| %>
+        <div class="post-preview">
+          <%= link_to Blog do %>
+            <h2 class="post-title">
+              <%= blog_rakings.name%>
+            </h2>
+          <% end %>
+        </div>
+      <% end %>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  </tbody>
+</table>
+
+<br>
+

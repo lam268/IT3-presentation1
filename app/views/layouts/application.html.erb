@@ -28,6 +28,9 @@
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <li class="nav-item">
+              <%= link_to "Raking", blog_rakings_path, :class => 'navbar-link' %>
+            </li>
+            <li class="nav-item">
               <%= link_to "My Blog", blogs_path, :class => 'navbar-link' %> 
             </li>
             <li class="nav-item">
