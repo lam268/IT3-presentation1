@@ -11,11 +11,17 @@
       <div class="col-lg-8 col-md-10 mx-auto">
       <% User.all.each do |blog_rakings| %>
         <div class="post-preview">
+          <% if current_user.id == blog_rakings.id %>
           <%= link_to Blog do %>
             <h2 class="post-title">
               <%= blog_rakings.name%>
             </h2>
             <% end %>
+          <% else %>
+            <h2 class="post-title">
+              <%= blog_rakings.name%>
+            </h2>
+          <% end %>
         </div>
       <div class="col-lg-8 col-md-10 mx-auto">
         Blog quantity: <%= blog_rakings.blogs.count()%>
