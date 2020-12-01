@@ -13,11 +13,10 @@
   <% end %>
 </p>
 
-<span><strong>Score: </strong><%= current_user.score %></span><br/>
-
-<%= render template: 'blogs/index', blog: @blog %>
-
 <span><strong>Email: </strong><%= current_user.email %></span><br/>
-
-  <%= link_to "Home", root_path %>
+<p>
+  <%= link_to "Home", root_path %> ||
+  <%= link_to "Edit", edit_user_registration_path %>
 </p>
+  
+
